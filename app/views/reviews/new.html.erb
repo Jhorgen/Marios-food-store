@@ -3,8 +3,7 @@
   <h3>Add a Review</h3>
 </div>
 <%= render "layouts/review_form" %>
-<%= render "layouts/errors", :object => @review %>
-<%= form_for @review, :url => product_path do |f| %>
+<%= form_for @review do |f| %>
   <%= f.label :author %>
   <%= f.text_field :author %>
   <%= f.label :content_body %>
