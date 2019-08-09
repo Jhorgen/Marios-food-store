@@ -6,18 +6,18 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @division = Division.find(params[:division_id])
-    @review = @division.reviews.new
+    @review = Product.find(params[:product_id])
+    @review = @review.reviews.new
     render :new
   end
 
   def create
-    @division = Division.find(params[:division_id])
-    @review = @division.reviews.new(review_params)
-    # binding.pry
+    @review = Review.find(params[:id])
+    @review = @review.reviews.new(review_params)
+    binding.pry
     if @review.save
       flash[:notice] = "Review successfully added!"
-      redirect_to division_path(id: params[:division_id])
+      redirect_to review_path(id: params[:id])
     else
       flash[:alert] = "Review couldn't be added!"
       render :new
@@ -51,7 +51,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:name, :division_id)
+    params.require(:review).permit(:name, :review_id)
   end
 
 end
