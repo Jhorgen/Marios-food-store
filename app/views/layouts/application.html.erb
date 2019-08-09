@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ProductReview</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+  <head>
+    <title>Products</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+<h2>test</h2>
 
-<body>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-  <%= flash[:alert] %>
-  <%= flash[:notice] %>
-
-  <%= yield %>
-</body>
+  <body>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+    <%= yield %>
+  </body>
 </html>
