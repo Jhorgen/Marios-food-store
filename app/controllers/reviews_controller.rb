@@ -5,53 +5,52 @@ class ReviewsController < ApplicationController
     render :index
   end
 
-  def new
-    @review = Product.find(params[:product_id])
-    @review = @review.reviews.new
-    render :new
-  end
+  # def new
+  #   @product = Product.find(params[:product_id])
+  #   @review = @review.reviews.new
+  #   render :new
+  # end
 
   def create
-    @review = Review.find(params[:id])
-    @review = @review.reviews.new(review_params)
+    @product = Product.find(params[:product_id])
+    @review = @product.reviews.new(review_params)
     binding.pry
-    if @review.save
+    if @product.save
       flash[:notice] = "Review successfully added!"
-      redirect_to review_path(id: params[:id])
+      redirect_to product_path(@product)
     else
       flash[:alert] = "Review couldn't be added!"
       render :new
     end
   end
 
-  def edit
-    @review = Review.find(params[:id])
-    render :edit
-  end
-
-  def show
-    @review = Review.find(params[:id])
-    render :show
-  end
-
-  def update
-    @review= Review.find(params[:id])
-    if @review.update(review_params)
-      redirect_to review_path
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @review = Review.find(params[:id])
-    @review.destroy
-    redirect_to reviews_path
-  end
+  # def edit
+  #   @review = Review.find(params[:id])
+  #   render :edit
+  # end
+  #
+  # def show
+  #   @review = Review.find(params[:id])
+  #   render :show
+  # end
+  #
+  # def update
+  #   @review= Review.find(params[:id])
+  #   if @review.update(review_params)
+  #     redirect_to review_path
+  #   else
+  #     render :edit
+  #   end
+  # end
+  #
+  # def destroy
+  #   @review = Review.find(params[:id])
+  #   @review.destroy
+  #   redirect_to reviews_path
+  # end
 
   private
-  def review_params
-    params.require(:review).permit(:name, :review_id)
-  end
-
+    def review_params
+      params.require(:review).permit(:author, :rating, :content_body)
+    end
 end
