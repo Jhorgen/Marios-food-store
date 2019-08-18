@@ -1,4 +1,4 @@
-<h2>Products</h2>
+<h2>Most Reviewed Products</h2>
 <% if @products.try(:any?) %>
   <ul>
     <% @products.each do |product| %>
@@ -9,4 +9,7 @@
   <p>No new products to show.</p>
 <% end %>
 
-<a href="<%= product_path %>">Click!!!</a>
+<h2>American made products</h2>
+
+
+<p><%= link_to "View all Products", products_path %></p>
