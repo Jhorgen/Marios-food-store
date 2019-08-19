@@ -1,15 +1,6 @@
 <div class="jumbotron">
-
-  <h3>Add a Review</h3>
+<h3>Add a Review</h3>
 </div>
 <%= render "layouts/review_form" %>
-<%= form_for @review do |f| %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  <%= f.label :content_body %>
-  <%= f.text_field :content_body %>
-  <%= f.label :rating %>
-  <%= f.text_field :rating %>
-  <%= f.submit %>
-<% end %>
+
 <%= link_to "Go Back", product_path(@product) %>

@@ -1,7 +1,18 @@
 <h2>Most Reviewed Products</h2>
-<% if @products.try(:any?) %>
+<% if @most_reviewed.try(:any?) %>
   <ul>
-    <% @products.each do |product| %>
+    <% @most_reviewed.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No new products to show.</p>
+<% end %>
+
+<h2>Recently Reviewed</h2>
+<% if @recent.try(:any?) %>
+  <ul>
+    <% @recent.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
@@ -10,6 +21,14 @@
 <% end %>
 
 <h2>American made products</h2>
-
+<% if @usa.try(:any?) %>
+  <ul>
+    <% @usa.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No new products to show.</p>
+<% end %>
 
 <p><%= link_to "View all Products", products_path %></p>

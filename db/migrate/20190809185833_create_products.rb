@@ -4,6 +4,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :cost
       t.string :country_of_origin
+
+      t.timestamps
     end
   end
 end

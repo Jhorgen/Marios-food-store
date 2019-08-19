@@ -32,8 +32,9 @@ class ProductsController < ApplicationController
 
   def update
     @product= Product.find(params[:id])
+    @product.save
     if @product.update(product_params)
-      render :show
+      redirect_to product_path(@product)
     else
       render :edit
     end
@@ -47,7 +48,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name)
+    params.require(:product).permit(:name, :cost, :country_of_origin)
   end
 
 end

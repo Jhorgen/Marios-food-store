@@ -1,7 +1,22 @@
-
 <h1><%= @product.name %></h1>
 <h3>$<%= @product.cost %></h3>
 <h3>Country of origin: <%= @product.country_of_origin %></h3>
+
+<h3>Product Review</h3>
+<% if @product.reviews.any? %>
+<h4><%= @product.reviews.length %> Reviews</h4>
+<% @product.reviews.each do |review| %>
+<ul>
+  <li>
+    <%= review.author %><br>
+    <%= review.rating %> stars<br>
+    <%= review.content_body %>
+  </li>
+</ul>
+<% end %>
+<% else %>
+<p>This product has no reviews.</p>
+<% end %>
 
 <p><%= link_to "Add review", new_product_review_path(@product) %></p>
 <p><%= link_to "Edit", edit_product_path(@product) %></p>
