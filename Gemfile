@@ -38,14 +38,13 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'faker'
+gem 'factory_bot'
+gem 'shoulda-matchers'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
-  gem 'launchy'
-  gem 'pry'
-  gem 'capybara'
 end
 
 group :development do
@@ -54,7 +53,11 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers'
+  gem 'launchy'
+  gem 'pry'
+  gem 'capybara'
+  gem 'rspec-rails'
 end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
