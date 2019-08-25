@@ -21,4 +21,4 @@ class Product < ApplicationRecord
     def titleize_product
       self.name = self.name.titleize
     end
-  end
+end

@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
-  
+
     if @product.save
       flash[:notice] = "Review successfully added!"
       redirect_to product_path(@product)
