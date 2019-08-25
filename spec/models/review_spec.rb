@@ -15,6 +15,14 @@ it("should create a review for a product") do
   expect(Review.all).to(eq([review]))
   end
 
+  it("should titalize a review") do
+    product = Product.create({name: "green beans", cost: 5.00, country_of_origin: "USA"})
+    product.save!
+    review = product.reviews.create({author: "hunter s. thompson", content_body: "Lorem ipsum dolar", rating: 3})
+    review.save!
+    expect(review.author).to(eq("Hunter S. Thompson"))
+  end
+
   it("should edit a review") do
     product = Product.create({name: "green beans", cost: 5.00, country_of_origin: "USA"})
     product.save!

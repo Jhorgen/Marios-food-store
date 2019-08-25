@@ -1,4 +1,6 @@
 class Review < ApplicationRecord
+  before_save(:titleize_review)
+
   belongs_to :product
   validates :author, presence: true
   validates :content_body, presence: true
