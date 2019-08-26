@@ -1,4 +1,6 @@
- <h2>Products</h2>
+<h1>Mario's</h1>
+  <h2>Products</h2>
+  <%= link_to "Add a product", new_product_path %>
 <% if @products.any? %>
   <ul>
     <% @products.each do |product| %>

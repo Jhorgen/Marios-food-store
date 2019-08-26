@@ -1,8 +1,6 @@
-<% if @product.errors.any? %>
-  <h3>Please fix these errors:</h3>
-  <ul>
-    <% @product.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="jumbotron">
+<h3>Add a product</h3>
+</div>
+<%= render "layouts/product_form"%>
+
+<%= link_to "Go Back", products_path %>

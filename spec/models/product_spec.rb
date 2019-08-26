@@ -8,7 +8,7 @@ end
 
 describe (Product) do
   it("should create a product") do
-    product = Product.create({name: "rama agnecy", cost: 15.00, country_of_origin: "USA"})
+    product = Product.create({name: "green beans", cost: 5.00, country_of_origin: "USA"})
     product.save!
     expect(Product.all).to(eq([product]))
   end
