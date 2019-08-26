@@ -8,10 +8,10 @@ FactoryBot.define do
     country_of_origin {"USA"}
   end
 
-
   factory :review do
     author {"hunter s. thompson"}
     content_body {"Lorem ipsum dolor"}
     rating {3}
   end
 end
+#
